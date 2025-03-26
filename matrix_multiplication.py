@@ -17,3 +17,4 @@ end_time = time.time()
 print(
     f"Matrix multiplication of size {N}x{N} completed on GPU in {end_time - start_time:.4f} seconds."
 )
+print("hello world")
