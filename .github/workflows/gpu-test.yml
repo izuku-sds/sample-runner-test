@@ -1,0 +1,11 @@
+on:
+  push:
+    branches:
+    - main
+    - release/*
+jobs:
+  test-gpu:
+    runs-on: self-hosted
+    steps:
+      - name: check nvidia smi
+        run: nvidia-smi
