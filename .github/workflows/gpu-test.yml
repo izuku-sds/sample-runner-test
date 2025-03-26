@@ -9,3 +9,13 @@ jobs:
     steps:
       - name: check nvidia smi
         run: nvidia-smi
+  test-gpu-code:
+    runs-on: [self-hosted, gpu]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Build Docker image
+        run: docker build -t my-gpu-app .
+      - name: Run GPU tests
+        run: docker run --gpus all my-gpu-app
+
